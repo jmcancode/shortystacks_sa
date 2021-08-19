@@ -7,15 +7,15 @@ export default function TopNav() {
     <React.Fragment>
       <Navbar collapseOnSelect expand="lg" bg="transparent" variant="light">
         <Container>
-          <Navbar.Brand as={Link} to="/" href="#home">
+          <Navbar.Brand as={Link} to="/" style={{ fontSize: "45px" }}>
             🥞{" "}
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          {/* <Navbar.Toggle aria-controls="responsive-navbar-nav" /> */}
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mx-auto">
+            <Nav className="mx-auto" style={{ fontSize: "5px" }}>
               <Nav.Link href="#!"></Nav.Link>
             </Nav>
-            <Nav>
+            {/* <Nav style={{ fontSize: "12px" }}>
               <Nav.Link as={Link} to="/menu">
                 Menu
               </Nav.Link>
@@ -25,7 +25,7 @@ export default function TopNav() {
               <Nav.Link as={Link} to="/contact">
                 Contact
               </Nav.Link>
-            </Nav>
+            </Nav> */}
           </Navbar.Collapse>
         </Container>
       </Navbar>
