@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { Row, Col, Button, Form, Modal } from "react-bootstrap";
-import logo from "../assets/IMG_6300.webp";
+import logo from "../assets/IMG_6296.webp";
 import { db } from "../firebase/config";
 
 function MyVerticallyCenteredModal(props) {
@@ -40,14 +40,14 @@ function MyVerticallyCenteredModal(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Join the Club!
+          Stay Current
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <div style={{}} className="p-2">
           <small>
-            Subscribe to our mailing list to stay current with Shorty Stacks -
-            SA pop-up locations and events.
+            Join our mailing list to stay current with Shorty Stacks - SA's
+            pop-up locations, events, and menu updates.
           </small>
         </div>
         <Form className="p-2" onSubmit={onSubmit}>
@@ -98,12 +98,12 @@ function MyVerticallyCenteredModal(props) {
               required
             />
           </Form.Group>
-          <div className="d-grid gap-2">
+          <div className="d-grid gap-2 pt-3">
             <Button
               type="submit"
               style={{
-                borderColor: "#171717",
-                backgroundColor: "#fdcf34",
+                borderColor: "transparent",
+                backgroundColor: "#fc9596",
                 margin: "5px",
               }}
             >
@@ -130,13 +130,13 @@ export default function Main() {
       >
         <Row xs={1} md={1} lg={1}>
           <Col className="pt-4 pb-4">
-            <div>
+            <div className="text-center">
               <img
                 src={logo}
                 alt="logo"
                 width={100}
                 height={100}
-                style={{ width: "350px", height: "350px" }}
+                style={{ width: "100%", height: "auto" }}
               />
             </div>
           </Col>
@@ -147,11 +147,11 @@ export default function Main() {
               onClick={() => setModalShow(true)}
               style={{
                 borderColor: "transparent",
-                backgroundColor: "#418b8c",
+                backgroundColor: "#fc9596",
                 margin: "5px",
               }}
             >
-              Subscribe for updates
+              SUBSCRIBE
             </Button>
             <MyVerticallyCenteredModal
               show={modalShow}
