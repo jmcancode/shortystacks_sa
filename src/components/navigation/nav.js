@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import logo from "../../assets/IMG_6300.webp";
 
 export default function TopNav() {
   return (
@@ -8,7 +9,13 @@ export default function TopNav() {
       <Navbar collapseOnSelect expand="lg" bg="transparent" variant="light">
         <Container>
           <Navbar.Brand as={Link} to="/" style={{ fontSize: "45px" }}>
-            🥞{" "}
+            <img
+              src={logo}
+              alt="logo"
+              width={100}
+              height={100}
+              style={{ height: "180px", width: "150px" }}
+            />
           </Navbar.Brand>
           {/* <Navbar.Toggle aria-controls="responsive-navbar-nav" /> */}
           <Navbar.Collapse id="responsive-navbar-nav">

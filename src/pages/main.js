@@ -1,10 +1,35 @@
 import React, { Fragment, useState } from "react";
 import { Row, Col, Button, Form, Modal } from "react-bootstrap";
+import logo from "../assets/IMG_6300.webp";
+import { db } from "../firebase/config";
 
 function MyVerticallyCenteredModal(props) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    db.collection("shorties")
+      .add({
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+      })
+      .then(() => {
+        alert(
+          "You've successfully signed-up to our mailing list! Add us to your favorites list to be the first to know our pop-up locations and weekly menu updates."
+        );
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
+
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+  };
 
   return (
     <Modal
@@ -22,10 +47,10 @@ function MyVerticallyCenteredModal(props) {
         <div style={{}} className="p-2">
           <small>
             Subscribe to our mailing list to stay current with Shorty Stacks -
-            SA locations and events.
+            SA pop-up locations and events.
           </small>
         </div>
-        <Form className="p-2">
+        <Form className="p-2" onSubmit={onSubmit}>
           <Form.Group>
             <Form.Control
               style={{
@@ -75,9 +100,10 @@ function MyVerticallyCenteredModal(props) {
           </Form.Group>
           <div className="d-grid gap-2">
             <Button
+              type="submit"
               style={{
-                borderColor: "transparent",
-                backgroundColor: "#fc9596",
+                borderColor: "#171717",
+                backgroundColor: "#fdcf34",
                 margin: "5px",
               }}
             >
@@ -105,10 +131,13 @@ export default function Main() {
         <Row xs={1} md={1} lg={1}>
           <Col className="pt-4 pb-4">
             <div>
-              <h1>Shorty Stacks</h1>
-              <small className="text-muted">
-                "The Best Mini-Pancakes in San Antonio"
-              </small>
+              <img
+                src={logo}
+                alt="logo"
+                width={100}
+                height={100}
+                style={{ width: "350px", height: "350px" }}
+              />
             </div>
           </Col>
           <Col>
@@ -118,11 +147,11 @@ export default function Main() {
               onClick={() => setModalShow(true)}
               style={{
                 borderColor: "transparent",
-                backgroundColor: "#fc9596",
+                backgroundColor: "#418b8c",
                 margin: "5px",
               }}
             >
-              Subscribe to our mailing list
+              Subscribe for updates
             </Button>
             <MyVerticallyCenteredModal
               show={modalShow}
@@ -132,7 +161,7 @@ export default function Main() {
               className="container pt-4"
               style={{
                 display: "flex",
-                flexDirection: "row",
+                flexDirection: "column",
                 justifyContent: "center",
               }}
             >
@@ -141,7 +170,7 @@ export default function Main() {
                   href="https://www.instagram.com/shortystacks_sa/"
                   rel="noopener noreferrer"
                   target="__blank"
-                  style={{ color: "#418b8c", textDecoration: "none" }}
+                  style={{ color: "#fc9596", textDecoration: "none" }}
                 >
                   INSTAGRAM
                 </a>
@@ -151,7 +180,7 @@ export default function Main() {
                   href="https://twitter.com/shortystacks_sa?lang=en"
                   rel="noopener noreferrer"
                   target="__blank"
-                  style={{ color: "#418b8c", textDecoration: "none" }}
+                  style={{ color: "#fc9596", textDecoration: "none" }}
                 >
                   TWITTER
                 </a>

@@ -30,9 +30,8 @@ const Marquee = () => {
           animate="animate"
         >
           <h1>
-            Oh Snap! You're on the wrong page. Oh Snap! You're on the wrong
-            page. Oh Snap! You're on the wrong page. Oh Snap! You're on the
-            wrong page.
+            Loading... Loading.... Loading...Loading... Loading....
+            Loading...Loading... Loading.... Loading...{" "}
           </h1>
         </motion.div>
       </div>
