@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { Row, Col, Button, Form, Modal } from "react-bootstrap";
+import { Row, Col, Button, Form, Modal, Image } from "react-bootstrap";
 import logo from "../assets/IMG_6296.webp";
 import { db } from "../firebase/config";
 
@@ -122,21 +122,23 @@ export default function Main() {
   return (
     <Fragment>
       <div
-        className="container pt-5 mt-5 text-center"
+        className="container text-center"
         style={{
           width: "100%",
           height: "100%",
+          paddingTop: "15%",
         }}
       >
         <Row xs={1} md={1} lg={1}>
           <Col className="pt-4 pb-4">
             <div className="text-center">
-              <img
+              <Image
+                fluid
                 src={logo}
                 alt="logo"
                 width={100}
                 height={100}
-                style={{ width: "100%", height: "auto" }}
+                style={{ width: "350px", height: "100%" }}
               />
             </div>
           </Col>
@@ -161,7 +163,7 @@ export default function Main() {
               className="container pt-4"
               style={{
                 display: "flex",
-                flexDirection: "column",
+                flexDirection: "row",
                 justifyContent: "center",
               }}
             >
