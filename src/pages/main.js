@@ -187,6 +187,16 @@ export default function Main() {
                   TWITTER
                 </a>
               </div>
+              <div className="p-2">
+                <a
+                  href="mailto:shortystacks.sa@gmail.com?subject= Shorty Stacks Catering Inquiry"
+                  rel="noopener noreferrer"
+                  target="__blank"
+                  style={{ color: "#fc9596", textDecoration: "none" }}
+                >
+                  CATERING
+                </a>
+              </div>
             </div>
           </Col>
         </Row>
