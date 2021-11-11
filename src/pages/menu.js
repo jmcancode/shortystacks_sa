@@ -1,13 +1,23 @@
-import { motion } from "framer-motion";
-import React, { Fragment } from "react";
 
+import React, {Fragment} from "react";
+import menu from "../assets/Unknown.png"
 
 export default function Menu() {
-  return (
-    <Fragment>
-      <motion.div>
+    return (
+        <>
+            <div
+                style={{
+                display: 'flex',
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: 'center',
+                height: "auto"
+                
+            }}>
 
-      </motion.div>
-    </Fragment>
-  );
+                <img src={menu} alt="menu" width={100} height={100} style={{width: "90%", height: "100%"}}/>
+
+            </div>
+        </>
+    );
 }

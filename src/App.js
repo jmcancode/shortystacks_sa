@@ -1,7 +1,7 @@
 import React from "react";
 import { Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import TopNav from "./components/navigation/nav";
+import TopNav from "./components/navigation/nav";
 import Routes from "./components/routes/routes";
 import Main from "./pages/main";
 
@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
       <Fragment>
-        {/* <TopNav /> */}
+        <TopNav />
         <Switch>
           <Route exact path="/" component={Main} />
           <Route component={Routes} />

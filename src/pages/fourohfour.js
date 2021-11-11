@@ -4,8 +4,10 @@ import Marquee from "../components/marquee/Marquee";
 
 export default function FourOhFour() {
   return (
-    <div>
+    <div className="container">
+      <div>
       <Marquee />
+      </div>
     </div>
   );
 }
