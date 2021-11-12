@@ -8,9 +8,8 @@ import {
     Image
 } from "react-bootstrap";
 import logo from "../assets/IMG_6296.webp";
-import CarouselImage from "../components/carousel/CarouselImage";
 import {db} from "../firebase/config";
-import {Link} from "react-router-dom"
+
 
 
 function MyVerticallyCenteredModal(props) {
