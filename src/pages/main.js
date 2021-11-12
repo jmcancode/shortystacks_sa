@@ -7,10 +7,8 @@ import {
     Modal,
     Image
 } from "react-bootstrap";
-import logo from "../assets/IMG_6296.webp";
+import CarouselImage from "../components/carousel/CarouselImage";
 import {db} from "../firebase/config";
-
-
 
 function MyVerticallyCenteredModal(props) {
     const [firstName,
@@ -129,20 +127,14 @@ export default function Main() {
                 className="container text-center"
                 style={{
                 width: "100%",
-                height: "100%",
+                height: "100%"
             }}>
                 <Row xs={1} md={1} lg={1}>
                     <Col className="pt-4 pb-4">
                         <div className="text-center">
-                            <Image
-                                fluid
-                                src={logo}
-                                alt="logo"
-                                width={100}
-                                height={100}
+                            <CarouselImage
                                 style={{
-                                width: "350px",
-                                height: "100%"
+                                maxHeight: "300px", maxWidth: "300px"
                             }}/>
                         </div>
                     </Col>

@@ -1,6 +1,5 @@
 import React, {Fragment} from "react";
 import menu from "../assets/Unknown.png"
-import CarouselImage from "../components/carousel/CarouselImage";
 
 export default function Menu() {
     return (
@@ -26,11 +25,7 @@ export default function Menu() {
                     }}/>
                 </div>
             </div>
-            <div className="row mb-5">
-                <div className="col">
-                    <CarouselImage/>
-                </div>
-            </div>
+
         </Fragment>
     );
 }
