@@ -15,31 +15,31 @@ export default function CarouselImage() {
         <div className="p-5">
             <Carousel fade controls={false} indicators={true} slide={true} touch={true}>
                 <Carousel.Item>
-                    <img className="d-block w-100" src={image0} alt="First slide"/>
+                    <img className="d-block w-100" src={image0} alt="First slide" loading="lazy"/>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img className="d-block w-100" src={image1} alt="Second slide"/>
+                    <img className="d-block w-100" src={image1} alt="Second slide" loading="lazy"/>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img className="d-block w-100" src={image2} alt="Third slide"/>
+                    <img className="d-block w-100" src={image2} alt="Third slide" loading="lazy"/>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img className="d-block w-100" src={image3} alt="Third slide"/>
+                    <img className="d-block w-100" src={image3} alt="Third slide" loading="lazy"/>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img className="d-block w-100" src={image4} alt="Third slide"/>
+                    <img className="d-block w-100" src={image4} alt="Third slide" loading="lazy"/>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img className="d-block w-100" src={image5} alt="Third slide"/>
+                    <img className="d-block w-100" src={image5} alt="Third slide" loading="lazy"/>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img className="d-block w-100" src={image6} alt="Third slide"/>
+                    <img className="d-block w-100" src={image6} alt="Third slide" loading="lazy"/>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img className="d-block w-100" src={image7} alt="Third slide"/>
+                    <img className="d-block w-100" src={image7} alt="Third slide" loading="lazy"/>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img className="d-block w-100" src={image8} alt="Third slide"/>
+                    <img className="d-block w-100" src={image8} alt="Third slide" loading="lazy"/>
                 </Carousel.Item>
             </Carousel>
         </div>

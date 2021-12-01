@@ -21,7 +21,8 @@ export default function Menu() {
                         height={100}
                         style={{
                         width: "90%",
-                        height: "100%"
+                        height: "100%",
+                        loading: "lazy"
                     }}/>
                 </div>
             </div>
