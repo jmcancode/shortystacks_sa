@@ -12,7 +12,7 @@ export default function Menu() {
                     flexDirection: "row",
                     justifyContent: "center",
                     alignItems: 'center',
-                    height: "auto"
+                    height: "100%",                    
                 }}>
                     <img
                         src={menu}
@@ -21,8 +21,10 @@ export default function Menu() {
                         height={100}
                         style={{
                         width: "90%",
-                        height: "100%",
-                        loading: "lazy"
+                        height: "90%",
+                        loading: "lazy",
+                        maxHeight: "1000px",
+                        maxWidth: "1250px"
                     }}/>
                 </div>
             </div>

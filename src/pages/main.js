@@ -5,7 +5,6 @@ import {
     Button,
     Form,
     Modal,
-    Image
 } from "react-bootstrap";
 import CarouselImage from "../components/carousel/CarouselImage";
 import {db} from "../firebase/config";
