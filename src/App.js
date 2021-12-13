@@ -1,20 +1,24 @@
-import React from "react";
-import { Fragment } from "react";
+import React, {Fragment} from "react";
+// routing
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import TopNav from "./components/navigation/nav";
+// custom components
+import Navigation from "./components/navigation/nav";
+// routes
 import Routes from "./components/routes/routes";
+// pages
 import Main from "./pages/main";
 
 function App() {
   return (
     <Router>
       <Fragment>
-        <TopNav />
+        <Navigation />
         <Switch>
           <Route exact path="/" component={Main} />
           <Route component={Routes} />
         </Switch>
       </Fragment>
+      
     </Router>
   );
 }

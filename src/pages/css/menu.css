@@ -1,0 +1,299 @@
+.menu-wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 10px 5px;
+    grid-auto-rows: minMax(100px, auto);
+    padding: 10px;
+    height: auto;
+}
+.imageWrapper {
+    height: 50px
+}
+.card {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    text-align: center;
+    padding-top: 15px;
+}
+.card-zero {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    text-align: center;
+}
+
+Image {
+    display: block;
+}
+
+.dash-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 98%;
+    border-radius: 10px;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50% );
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.zero {
+    grid-column: 1/15;
+    grid-row: 1;
+    height: 18vh;
+    position: relative;
+    display: inline-block;
+}
+
+.one {
+    grid-column: 1/5;
+    grid-row: 2/3;
+}
+
+.two {
+    grid-column: 5/15;
+    grid-row: 2/4;
+}
+
+.three {
+    grid-column: 1/5;
+    grid-row: 3/5;
+}
+
+.four {
+    grid-column: 5/15;
+    grid-row: 5/6;
+}
+.five {
+    grid-column: 5/15;
+    grid-row: 4/5;
+}
+
+.numbers {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.prices {
+    font-size: 20px;
+}
+
+.title {
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: #fecf24;
+    font-size: 25px;
+}
+
+.menu-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+.numbers-display {
+    display: flex;
+    flex-direction: column;
+}
+
+.toppings {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2.5px;
+}
+
+.toppings-one {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    letter-spacing: 0.89px;
+}
+.toppings-two {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    letter-spacing: 0.89px;
+}
+
+.toppings-fruit {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.extras {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-weight: 600;
+}
+
+.fresca {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/*! MOBILE SCREEN CSS */
+@media only screen and (max-width: 375px) {
+    .menu-wrapper {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 5px;
+        grid-auto-rows: minMax(50px, auto);
+        padding: 10px;
+        height: 100%;
+    }
+    .card {
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        text-align: center;
+        padding-top: 15px;
+    }
+
+    .card-zero {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        text-align: center;
+    }
+    .dash-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: stretch;
+        object-position: 0 50%;
+    }
+    .zero {
+        grid-column: 1/14;
+        grid-row: 1;
+    }
+    .one {
+        grid-column: 1/14;
+        grid-row: 2;
+        padding: 0px
+    }
+    .two {
+        grid-column: 1/14;
+        grid-row: 3;
+    }
+    .three {
+        grid-column: 1/6;
+        grid-row: 4;
+    }
+    .four {
+        grid-column: 1/14;
+        grid-row: 5;
+    }
+    .five {
+        grid-column: 6/14;
+        grid-row: 4;
+    }
+
+    Link,
+    a {
+        text-decoration: none;
+        color: #171717;
+    }
+    Link,
+    a:hover {
+        text-decoration: none;
+        color: #f5f5f5;
+    }
+
+    Image {
+        display: block;
+    }
+
+    .numbers {
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .prices {
+        font-size: 12px;
+    }
+
+    .title {
+        font-weight: bolder;
+        text-transform: uppercase;
+        color: #fecf24;
+        font-size: 20px;
+    }
+
+    .menu-display {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 5px;
+        font-size: 8px;
+    }
+    .numbers-display {
+        display: flex;
+        flex-direction: column;
+    }
+    .toppings {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0px;
+    }
+    .toppings-one {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        letter-spacing: 0px;
+    }
+    .toppings-two {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        letter-spacing: 0px;
+    }
+    .toppings-fruit {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .extras {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        font-weight: 600;
+        font-size: 12px;
+    }
+
+    .fresca {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .toppingFont {
+        font-size: 12px;
+    }
+    .sauceFont {
+        font-size: 12px;
+    }
+}
