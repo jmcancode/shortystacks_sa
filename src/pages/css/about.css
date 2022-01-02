@@ -93,7 +93,8 @@ Image {
 
 .smacks {
     text-decoration: none;
-    color: #e30105
+    color: #e30105;
+    padding-left: 5px;
 }
 .icons {
     display: flex;

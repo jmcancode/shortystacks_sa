@@ -7,12 +7,17 @@ import {Image} from 'react-bootstrap'
 import dashPhoto from "../assets/about.jpg"
 // react-icons
 import {FaInstagram, FaTwitter} from 'react-icons/fa'
+import { Helmet } from "react-helmet";
 // react-alice-carousel
 
 
 export default function About() {
     return (
         <Fragment>
+            <Helmet>
+                <title>About Us | Shorty Stacks Mini Pancakes</title>
+                <meta name="description" content="From California to Texas we bring you the best mini-pancakes in town! We use premium ingredient in our products and as-always the best service you can find. Find us in your local markets on Saturday and Sundays or at our residential location - Smacks Chicken Shack."/>
+            </Helmet>
             <div className="about-wrapper">
                 <div className="card-zero zero">
                     <h4

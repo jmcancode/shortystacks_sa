@@ -5,9 +5,16 @@ import "./css/menu.css"
 import {Image} from 'react-bootstrap'
 // dashPhoto
 import dashPhoto from "../assets/10111CD6-FE5B-43B7-92E4-701A4E005A67.JPG"
+import {Helmet} from "react-helmet"
+
+
 export default function Menu() {
     return (
         <Fragment>
+            <Helmet>
+                <title>Menu | Mini Pancakes San Antonio</title>
+                <meta name="description" content="Build your own stacks! Choose your quantity and toppings and enjoy. Visit us in-side Smacks Chicken Shack every weekend."/>
+            </Helmet>
             <div className="menu-wrapper">
                 <div className="card-zero zero">
                     <h4
