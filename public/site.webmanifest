@@ -2,6 +2,7 @@
     "name": "Shorty Stacks",
     "short_name": "Shorty Stacks",
     "description": "The Best Mini Pancakes in South Texas",
+    "author": "Jon-Michael JM Narvaez",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -14,7 +15,12 @@
             "type": "image/png"
         }
     ],
+    "start_url": "/",
+    "scope": ".",
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
-    "display": "standalone"
+    "display": "standalone",
+    "incognito": "spanning"
+
+  
 }
