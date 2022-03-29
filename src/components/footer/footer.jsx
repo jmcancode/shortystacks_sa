@@ -1,11 +1,12 @@
 import React from 'react'
+// custom styles
+import "./footer.css"
+
 
 export default function Footer() {
     return (
-        <div className="footer-container">
-            <div>
-                <p>This is where the footer will live</p>
-            </div>
-        </div>
+       <div>
+
+       </div>
     )
 }

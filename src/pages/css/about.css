@@ -1,5 +1,3 @@
-
-
 .about-wrapper{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -87,15 +85,11 @@ Image {
 }
 
 .bioFont {
-    font-size: 16px;
+    font-size: 1.89em;
+    font-weight: 300;
     letter-spacing: .98px;
 }
 
-.smacks {
-    text-decoration: none;
-    color: #e30105;
-    padding-left: 5px;
-}
 .icons {
     display: flex;
     flex-direction: row;
@@ -107,4 +101,9 @@ Image {
     justify-content: center;
     align-items: center;
     object-fit: cover;
+}
+
+.catering-link {
+    text-decoration: none;
+    color: #e30105
 }

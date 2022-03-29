@@ -1,252 +1,438 @@
-import React, {Fragment, useState, useRef} from "react";
-// react-bootstrap
-import {Button, Form, Modal} from "react-bootstrap";
-// firebase
-import {db} from "../firebase/config";
+import React, {Fragment} from "react";
 // custom css
 import "./css/main.css"
-// hero image
-import heroImage from "../assets/IMG_6296.webp"
+// cookies consented
+import CookieConsent from "react-cookie-consent";
+// react-bootstrap
+import {Carousel, Container, Form, Button, Table} from 'react-bootstrap'
+// images
+import imageOne from "../assets/F929B72D-7296-45AC-89B5-0EE8B8F8AE97.JPG"
+import carouselImgOne from "../assets/64432D68-8CBF-4A58-A86D-5C61420DEEAA.JPG"
+import carouselImgTwo from "../assets/graves.jpeg"
+import carouselImgThree from "../assets/strawbettry.jpeg"
+import footerLogo from "../assets/IMG_6296.webp";
 // react-icons
-import {AiOutlineArrowUp} from 'react-icons/ai'
-
-// <----------------Starts here---------------------> // custom modal
-function MyVerticallyCenteredModal(props) {
-    // state hooks
-    const [firstName,
-        setFirstName] = useState("");
-    const [lastName,
-        setLastName] = useState("");
-    const [email,
-        setEmail] = useState("");
-
-    const onSubmit = (e) => {
-        e.preventDefault();
-
-        db
-            .collection("shorties")
-            .add({firstName: firstName, lastName: lastName, email: email})
-            .then(() => {
-                alert("You've successfully signed-up to our mailing list! Add us to your favorites list" +
-                        " to be the first to know our pop-up locations and weekly menu updates.");
-            })
-            .catch((err) => {
-                alert(err.message);
-            });
-
-        setFirstName("");
-        setLastName("");
-        setEmail("");
-    };
-
-    return (
-        <Modal
-            {...props}
-            size="lg"
-            aria-labelledby="contained-modal-title-vcenter"
-            centered>
-            <Modal.Header closeButton>
-                <Modal.Title
-                    id="contained-modal-title-vcenter"
-                    style={{
-                    color: '#438b8e'
-                }}>
-                    Stay Current
-                </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                <div style={{}} className="p-2">
-                    <small>
-                        Join our mailing list to stay current with Shorty Stacks - SA's pop-up
-                        locations, events, and menu updates.
-                    </small>
-                </div>
-                <Form className="p-2" onSubmit={onSubmit}>
-                    <Form.Group>
-                        <Form.Control
-                            style={{
-                            borderBottomLeftRadius: "0px",
-                            borderBottomRightRadius: "0px",
-                            borderTopColor: "transparent",
-                            borderLeftColor: "transparent",
-                            borderRightColor: "transparent"
-                        }}
-                            placeholder="first name"
-                            type="text"
-                            onChange={(e) => setFirstName(e.target.value)}
-                            value={firstName}
-                            required/>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Control
-                            style={{
-                            borderBottomLeftRadius: "0px",
-                            borderBottomRightRadius: "0px",
-                            borderTopColor: "transparent",
-                            borderLeftColor: "transparent",
-                            borderRightColor: "transparent"
-                        }}
-                            placeholder="last name"
-                            type="text"
-                            onChange={(e) => setLastName(e.target.value)}
-                            value={lastName}/>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Control
-                            type="email"
-                            style={{
-                            borderBottomLeftRadius: "0px",
-                            borderBottomRightRadius: "0px",
-                            borderTopColor: "transparent",
-                            borderLeftColor: "transparent",
-                            borderRightColor: "transparent"
-                        }}
-                            placeholder="bestminipancakes@in-sa.com"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required/>
-                    </Form.Group>
-                    <div className="d-grid gap-2 pt-3">
-                        <Button
-                            type="submit"
-                            style={{
-                            borderColor: "transparent",
-                            backgroundColor: "#fecf2f",
-                            margin: "5px"
-                        }}>
-                            Subscribe
-                        </Button>
-                    </div>
-                </Form>
-            </Modal.Body>
-        </Modal>
-    );
-}
+import {AiOutlineDown} from "react-icons/ai";
 
 export default function Main() {
-    // modal pop-up
-    const [modalShow,
-        setModalShow] = useState(false);
-    // ref hooks
-    const scrollToContactRef = useRef();
-    // use state
-    const [contactName,
-        setContactName] = useState();
-    const [contactEmail,
-        setContactEmail] = useState();
-    const [contactSubject,
-        setContactSubject] = useState();
-    const [contactMessage,
-        setContactMessage] = useState();
-
-    const submitContactForm = () => {
-        window.open(`mailto:shortystacks.sa@gmail.com?subject=${encodeURIComponent(contactSubject)}&body=${encodeURIComponent(contactName)} (${encodeURIComponent(contactEmail)}): ${encodeURIComponent(contactMessage)}`)
-    }
 
     return (
         <Fragment>
-            <section className="landing-container text-center">
-                <div
-                    className="landing"
-                    style={{
-                    display: 'flex',
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center"
-                }}>
-                    <div >
+            {/* Cooke Consent */}
+            <CookieConsent
+                location="bottom"
+                buttonText="okay, sure!"
+                acceptOnScroll={true}
+                acceptOnScrollPercentage={50}
+                onAccept={(acceptedByScrolling) => {
+                if (acceptedByScrolling) {
+                    alert("By scrolling, you've accepted out web app cookie.");
+                } else {
+                    console.log("Accept was triggered by clicking the Accept button");
+                }
+            }}
+                cookieName="shorties-cookie"
+                style={{
+                background: "#438b8e",
+                zIndex: 19000
+            }}
+                buttonStyle={{
+                color: "#fff",
+                backgroundColor: '#fecf24',
+                fontSize: "13px"
+            }}
+                expires={360}>
+                This website uses cookies to enhance the user experience.{" "}
+            </CookieConsent>
+            {/* Landing Page */}
+            <section>
+                <div className="landing">
+                    <div>
                         <div>
-                            <img src={heroImage} alt="logo"/>
-                        </div>
-                        <div
-                            className="text-black"
-                            style={{
-                            padding: "20px"
-                        }}>
-                            <h1>The Best Mini-Pancakes in South Texas!</h1>
-                        </div>
-                        <div className="button-group">
-                            <Button
-                                variant="secondary"
-                                onClick={() => setModalShow(true)}
-                                style={{
-                                borderColor: "transparent",
-                                margin: '5px',
-                                backgroundColor: "#438b8e"
-                            }}>
-                                SUBSCRIBE
-                            </Button>
-                            <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)}/>
-                            <Button
-                                variant="outline-secondary"
-                                style={{
-                                borderColor: "#438b8e",
-                                color: "#438b8e"
-                            }}
-                                onClick={() => scrollToContactRef.current.scrollIntoView()}>Contact Us</Button>
+                            <Carousel fade indicators={false} controls={false}>
+                                <Carousel.Item>
+                                    <img
+                                        className="d-block w-100 firstImage"
+                                        src={carouselImgOne}
+                                        alt="First slide"/>
+                                    <Carousel.Caption className="view-menu">
+                                        <h4>View menu</h4>
+                                        <AiOutlineDown size={20}/>
+                                    </Carousel.Caption>
+                                </Carousel.Item>
+                                <Carousel.Item>
+                                    <img
+                                        className="d-block w-100 firstImage"
+                                        src={carouselImgTwo}
+                                        alt="Second slide"/>
+                                    <Carousel.Caption className="view-menu">
+                                        <h4>View menu</h4>
+                                        <AiOutlineDown size={20}/>
+                                    </Carousel.Caption>
+                                </Carousel.Item>
+                                <Carousel.Item>
+                                    <img
+                                        className="d-block w-100 firstImage"
+                                        src={carouselImgThree}
+                                        alt="Third slide"/>
+                                    <Carousel.Caption className="view-menu">
+                                        <h5>View menu</h5>
+                                        < a className="view" href="#menu">
+                                            <AiOutlineDown size={20}/>
+                                        </a>
+                                    </Carousel.Caption>
+                                </Carousel.Item>
+                            </Carousel>
                         </div>
                     </div>
                 </div>
             </section>
-            <section className="contact-container text-white" ref={scrollToContactRef}>
-                <div
-                    className="landing"
-                    style={{
-                    display: 'flex',
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center"
-                }}>
+            {/* About Us */}
+            <div>
+                <div>
+                    <section className="about-description-container">
+                        <div className="about-us">
+                            <small className="text-center about-description p-5">
+                                Shorty Stacks brings a curated menu inspired by Los Angeles street vendor
+                                culture to San Antonio. The menu features three aguas frescas, as well as an
+                                assortment of mini pancakes both sweet and savory.
+                                <br/><br/>
+                                We take pride in our handmade product made with local ingredients and lots of
+                                love.
+                            </small>
+                        </div>
+                    </section>
+                </div>
+                {/* Start Menu */}
+                <div className="cafe-grid" id="menu">
+                    {/* <div className="carousel-wrapper">
+                        <div className="cafe-carousel swiper-container">
+                            <div className="swiper-wrapper">
+                                <div className="swiper-slide">
+                                    <div className="image-square">
+                                        <img src={imageOne} alt="imageOne"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> */}
+                    <div className="menu-section">
+                        <div className="single-menu">
+                            <h2>Aguas Frescas</h2>
+                            <Table responsive>
+                                <tbody>
+                                    <tr>
+                                        <td>1 x $5.00</td>
+                                        <td>2 x $8.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Agua de Pina
+                                        </td>
+                                        <td>
+                                            Agua Fresca
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Agua de Sandia
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </Table>
+                        </div>
+                        <div className="single-menu">
+                            <h2>Stacks</h2>
+                            <Table responsive>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            15
+                                        </td>
+                                        <td>
+                                            $7.00
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            30
+                                        </td>
+                                        <td>
+                                            $12.00
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            60
+                                        </td>
+                                        <td>
+                                            $20.00
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </Table>
+                        </div>
+                        <div className="single-menu">
+                            <h2>Stack Combos</h2>
+                            <Table responsive>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            15 Stack + 1 Agua Fresca
+                                        </td>
+                                        <td>
+                                            $10.00
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            30 Stack + 2 Agua Frescas
+                                        </td>
+                                        <td>
+                                            $17.00
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            60 Stack + 3 Agua Frescas
+                                        </td>
+                                        <td>
+                                            $25.00
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </Table>
+                        </div>
+                        <div className="single-menu">
+                            <h2>Slides
+                                <small
+                                    style={{
+                                    fontSize: "10px"
+                                }}>(Two cakes, Sausage, Egg & Cheese)</small>
+                            </h2>
+                            <Table responsive>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            4
+                                        </td>
+                                        <td>
+                                            $5.00
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            8
+                                        </td>
+                                        <td>
+                                            $9.00
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            12
+                                        </td>
+                                        <td>
+                                            $13.00
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </Table>
+                        </div>
+                        <div className="single-menu">
+                            <h2>Toppings</h2>
+                            <Table responsive>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            Marshmallows
+                                        </td>
+                                        <td>
+                                            Sprinkles
+                                        </td>
+                                        <td>
+                                            Pecans
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Fruit Pebbles
+                                        </td>
+                                        <td>
+                                            Lucky Charms
+                                        </td>
+                                        <td>
+                                            Powdered Sugar
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Chocolate Chips
+                                        </td>
+                                        <td>
+                                            Crushed Oreo's
+                                        </td>
+                                        <td>
+                                            Almonds
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mini Reese's</td>
+                                        <td>
+                                            Shredded Coconut
+                                        </td>
+                                        <td>
+                                            Crushed Butterfingers
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Circus Animal Cookies
+                                        </td>
+                                        <td>
+                                            Crushed Gram Crackers
+                                        </td>
+                                        <td>
+                                            Cinnamon Toast Crunch
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </Table>
+                        </div>
+                        <div className="single-menu">
+                            <h2>Fruit Toppings<small style={{
+            fontSize: "10px"
+        }}>
+                                    (Banana, Blueberry, Strawberry)</small>
+                            </h2>
+                            <Table responsive>
 
-                    <h1>
-                        Let's connect
-                    </h1>
-                    <Form>
-                        <Form.Group>
-                            <Form.Label>Full Name</Form.Label>
-                            <Form.Control
-                                type="text"
-                                placeholder="Full Name"
-                                value={contactName}
-                                onChange={(e) => setContactName(e.target.value)}/>
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                            <Form.Label>Email address</Form.Label>
-                            <Form.Control
-                                type="email"
-                                placeholder="name@example.com"
-                                value={contactEmail}
-                                onChange={(e) => setContactEmail(e.target.value)}/>
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Subject</Form.Label>
-                            <Form.Control
-                                type="text"
-                                placeholder="subject"
-                                value={contactSubject}
-                                onChange={(e) => setContactSubject(e.target.value)}/>
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                            <Form.Label>How can we help?</Form.Label>
-                            <Form.Control
-                                as="textarea"
-                                rows={3}
-                                value={contactMessage}
-                                onChange={(e) => setContactMessage(e.target.value)}/>
-                        </Form.Group>
-                        <div className="d-grid gap-2">
-                            <Button onClick={submitContactForm} variant="secondary">Submit</Button>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            15
+                                        </td>
+                                        <td>
+                                            $1.00
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            30
+                                        </td>
+                                        <td>
+                                            $2.00
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            60
+                                        </td>
+                                        <td>
+                                            $3.00
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </Table>
                         </div>
-                    </Form>
-                    <div
-                        style={{
-                        padding: 90,
-                        
-                    }}>
-                        <AiOutlineArrowUp onClick={() => window.scrollTo(0, 0)}/>
+                        <div className="single-menu">
+                            <h2>Sauces</h2>
+                            <Table responsive>
+
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            Nutella
+                                        </td>
+                                        <td>
+                                            Caramel
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Strawberry Syrup
+                                        </td>
+                                        <td>
+                                            Blueberry Syrup
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Chocolate Syrup
+                                        </td>
+                                        <td>
+                                            Maple Syrup
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Condensed Milk
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </Table>
+                        </div>
                     </div>
                 </div>
-            </section>
+
+                <div className="footer">
+                    <div className="footer-container">
+                        <div className="inner-footer container p-5">
+                            <div>
+                                <img src={footerLogo} alt="footerlogo" className="footer-logo"/>
+                            </div>
+                            <div
+                                style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                alignItems: "center",
+                                color: "#fff"
+                            }}>
+                                <p
+                                  className="followUs">Follow us</p>
+                                <small
+                                    style={{
+                                    fontSize: "1rem"
+                                }}>@shortystacks_sa</small>
+                            </div>
+                            <div className="footer-list">
+                                <ul
+                                    style={{
+                                    listStyle: "none",
+                                    
+                                }}>
+                                    <li>
+                                        <a className="footer-links" href="mailto:shortystacks_sa@gmail.com">
+
+                                            Catering Contact
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div className="outer-footer">
+                        <small>All Rights Reservered for E. Sanchez Enterprises, LLC || Web App made with
+                            <span
+                                style={{
+                                paddingLeft: '5px',
+                                paddingRight: '5px'
+                            }}>❤️</span>
+                            by
+                            <a
+                                className="bboy"
+                                href="http://www.bboycreative.com"
+                                rel="noopener noreferrer"
+                                target="_blank"
+                                style={{paddingLeft: '5px', paddingRight: '5px'}}
+                                >b-boy creative</a>
+                        </small>
+                    </div>
+                </div>
+
+            </div>
         </Fragment>
     );
 }

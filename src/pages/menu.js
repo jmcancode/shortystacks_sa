@@ -3,9 +3,8 @@ import React, {Fragment} from "react";
 import "./css/menu.css"
 // react-bootstrap
 import {Image} from 'react-bootstrap'
-// dashPhoto
-import dashPhoto from "../assets/10111CD6-FE5B-43B7-92E4-701A4E005A67.JPG"
 import {Helmet} from "react-helmet"
+import Footer from "../components/footer/Footer";
 
 
 export default function Menu() {
@@ -20,15 +19,15 @@ export default function Menu() {
                     <h4
                         className="text-overlay"
                         style={{
-                        color: "#438b8e",
+                        color: "#fecf24",
                         fontSize: "50px"
                     }}>Menu</h4>
-                    <Image
+                    {/* <Image
                         src={dashPhoto}
                         alt="dashPhoto"
                         width={100}
                         height={100}
-                        className="dash-photo"/>
+                        className="dash-photo"/> */}
                 </div>
                 <div className="card one">
                     <div>
@@ -119,6 +118,7 @@ export default function Menu() {
             </div>
             <div className="imageWrapper">
             </div>
+            <Footer/>
         </Fragment>
     );
 }

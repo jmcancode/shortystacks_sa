@@ -1,38 +1,238 @@
-.landing-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-row-gap: 0px;
-    grid-column-gap: 0px;
-    padding: 5px;
-    width: 100%;
-    height: 96vh;
+.landing {
+    height: 100vh;
 }
 
-.contact-container {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-gap: 5px 5px;
-    grid-auto-rows: minMax(50px, auto);
-    padding: 5px;
+.view {
+    text-decoration: none;
+    color: #fff;
+}
+.view:hover {
+    color: #438b8e;
+    cursor: pointer;
+}
+
+.view-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+
+}
+
+.about-description-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    padding: 50px
+}
+.about-section {
+    align-items: center;
+}
+.about-us {
+    margin: 0 auto;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.about-description {
+    font-family: 'Special Elite', cursive;
+    color: #438b8e;
+}
+
+td,
+th,
+tr {
+    padding: 0.78rem 1rem;
+    border: 1px solid #438b8e;
+}
+
+.single-menu {
+    margin-bottom: 60px;
+}
+.up-arrow:hover {
+    cursor: pointer;
+}
+
+.contact-us {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.firstImage {
     width: 100%;
     height: 100vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cafe-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.carousel-wrapper {
+    position: relative;
+}
+
+.cafe-carousel {
+    margin-bottom: 3rem;
+    object-fit: cover;
+}
+
+.swiper-container {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+}
+
+.swiper-slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+}
+
+.footer {
+    height: 35vh;
+}
+
+.footer-container {
+    height: 100%;
     background-color: #438b8e;
 }
 
-.landing {
-    grid-column: 1/15;
+.footer-links {
+    color: #fff;
+    text-decoration: none;
+}
+.footer-links:hover {
+    color: #f5f5f5;
+    text-decoration: line-through;
+}
+.inner-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+.outer-footer {
+    height: 8vh;
+    background-color: #438b8e;
+    text-align: center;
+    color: #fff;
+    border-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }
 
+.bboy {
+    color: #c60000;
+    text-decoration: none;
+}
+.bboy:hover {
+    color: #f5f5f5;
+    text-decoration: line-through;
+}
 
 img {
-  width: 50%;
-  height: 25%;
+    max-width: 100%;
+    border-style: none;
+}
+
+.image-square {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    padding-top: 100%;
+    object-fit: cover;
+}
+
+.menu-section {
+    margin-top: 1.5rem;
+    position: relative;
+    top: 0;
+}
+
+.footer-logo {
+    height: 10rem;
+    width: auto;
+}
+
+h2 {
+    font-family: 'Special Elite', cursive;
+    color: #438b8e;
+}
+
+li {
+    color: #fff;
 }
 
 
-@media only screen and (min-width: 1000px) {
-  img {
-    width: 25%;
-    height: 25%;
-  }
+
+.followUs {
+    font-size: 2rem;
+}
+
+
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 0.75rem;
+    }
+    .footer {
+        height: 35vh;
+    }
+
+    .inner-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+
+}
+@media only screen and (max-width: 390px) {
+
+    .footer {
+        height: 55vh;
+    }
+    .inner-footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+    }
+
+    .followUs {
+        font-size: 25px;
+    }
 }

@@ -88,6 +88,7 @@ Image {
     font-weight: bold;
 }
 
+
 .prices {
     font-size: 20px;
 }
@@ -95,7 +96,7 @@ Image {
 .title {
     font-weight: bolder;
     text-transform: uppercase;
-    color: #fecf24;
+    color: #438b8e;
     font-size: 25px;
 }
 
@@ -105,6 +106,13 @@ Image {
     justify-content: space-between;
     padding: 20px;
 }
+
+@media screen and (max-width: 390px) {
+    .menu-display {
+        justify-content: space-around;
+    }
+}
+
 .numbers-display {
     display: flex;
     flex-direction: column;
@@ -128,6 +136,15 @@ Image {
     flex-direction: column;
     align-items: flex-start;
     letter-spacing: 0.89px;
+}
+
+@media screen and (max-width: 390px) {
+    .toppings-one{
+        align-items: center;
+    }
+.toppings-two{
+    align-items: center
+}
 }
 
 .toppings-fruit {
