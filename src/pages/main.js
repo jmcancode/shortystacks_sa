@@ -123,7 +123,6 @@ export default function Main() {
                                 <tbody>
                                     <tr>
                                         <td>1 x $5.00</td>
-                                        <td>2 x $8.00</td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -204,7 +203,7 @@ export default function Main() {
                             </Table>
                         </div>
                         <div className="single-menu">
-                            <h2>Slides
+                            <h2>Sliders
                                 <small
                                     style={{
                                     fontSize: "10px"
