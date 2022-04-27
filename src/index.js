@@ -5,13 +5,17 @@ import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 // routing
 import {BrowserRouter} from "react-router-dom"
+// stripe
+import {Elements} from "@stripe/react-stripe-js";
+import {stripePromise} from "./utils/stripe.utils";
 
 
-    ReactDOM.render(
-        <BrowserRouter>
+
+ReactDOM.render(
+    <BrowserRouter>
+    <Elements stripe={stripePromise}>
         <App/>
-    </BrowserRouter>, document.getElementById("root"));
+    </Elements>
+</BrowserRouter>, document.getElementById("root"));
 
 serviceWorkerRegistration.register();
-
-

@@ -1,6 +1,6 @@
 import React, {Fragment} from "react";
 // custom components
-import Marquee from "../components/marquee/Marquee";
+
 import AnimatedPage from "../AnimatedPage";
 export default function FourOhFour() {
     return (

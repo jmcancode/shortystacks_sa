@@ -5,6 +5,9 @@ import "./navigation.css"
 import logo from '../../assets/IMG_6300.webp'
 import {Outlet} from 'react-router-dom'
 import {Navbar, Container, Nav} from "react-bootstrap"
+import {AiFillShopping} from 'react-icons/ai'
+
+
 const Navigation = (props) => {
     return (
         <Fragment>
@@ -22,6 +25,9 @@ const Navigation = (props) => {
                             
                             <Nav.Link href="#menu" >
                             <small className="bag">Menu</small>
+                            </Nav.Link>
+                            <Nav.Link>
+                                <AiFillShopping size={20}/>
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
