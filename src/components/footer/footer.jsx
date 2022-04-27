@@ -2,16 +2,10 @@ import React, {Fragment, useState} from 'react'
 // custom styles
 import "./footer.css"
 import footerLogo from "../../assets/IMG_6296.webp";
-import {Modal, Button} from 'react-bootstrap';
-import PaymentForm from "../payment-form/payment-form"
 
 export default function Footer() {
 
-    const [show,
-        setShow] = useState(false);
 
-    const handleModalClose = () => setShow(false);
-    const handleModalShow = () => setShow(true);
 
     return (
         <Fragment>
@@ -46,27 +40,15 @@ export default function Footer() {
                                         Catering Contact
                                     </a>
                                 </li>
-                                <li>
-                                    <Button onClick={handleModalShow}>Pay here</Button>
-                                </li>
+                                
                             </ul>
 
                         </div>
                     </div>
-                    < Modal show={show} onHide={handleModalClose} backdrop="static" keyboard={false} >
-                        <Modal.Dialog style={{width: '80%'}}>
-                            <Modal.Header closeButton>
-                                <Modal.Title>Thank you for your purchase!</Modal.Title>
-                            </Modal.Header>
-                            <Modal.Body>
-                                <small>Please process your payment</small>
-                                <PaymentForm/>
-                            </Modal.Body>
-                        </Modal.Dialog>
-                    </Modal>
+                  
                 </div>
                 <div className="outer-footer">
-                    <small>All Rights Reservered for E. Sanchez Enterprises, LLC || Web App made with
+                    <small>All Rights Reserved for E. Sanchez Enterprises, LLC || Web App made with
                         <span
                             style={{
                             paddingLeft: '5px',
