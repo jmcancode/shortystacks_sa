@@ -1,25 +1,35 @@
 import React, {Fragment} from "react";
 // routing
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import {Routes, Route, useLocation} from "react-router-dom";
 // custom components
 import Navigation from "./components/navigation/nav";
-// routes
-import Routes from "./components/routes/routes";
-// pages
+import Footer from "./components/footer/Footer"
+// routes pages
 import Main from "./pages/main";
+import FourOhFour from "./pages/fourohfour"
+// animation
+import {AnimatePresence} from 'framer-motion';
+
 
 function App() {
-    return (
-        <Router>
-            <Fragment>
-                <Navigation/>
-                <Switch>
-                    <Route exact path="/" component={Main}/>
-                    <Route component={Routes}/>
-                </Switch>
-            </Fragment>
 
-        </Router>
+    const location = useLocation();
+
+
+    return (
+
+        <Fragment>
+            <AnimatePresence exitBeforeEnter>
+            <Routes key={location.pathname} location={location}>
+                <Route path="/" element={< Navigation />}>
+                    <Route index element={ <Main/>}/>
+                    <Route path="*" element={FourOhFour}/>
+                </Route>
+            </Routes>
+            </AnimatePresence>
+            <Footer/>
+        </Fragment>
+
     );
 }
 

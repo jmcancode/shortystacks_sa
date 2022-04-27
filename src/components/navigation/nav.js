@@ -3,7 +3,7 @@ import React, {Fragment} from 'react';
 import "./navigation.css"
 // logo
 import logo from '../../assets/IMG_6300.webp'
-// import {NavLink} from 'react-router-dom/cjs/react-router-dom.min';
+import {Outlet} from 'react-router-dom'
 import {Navbar, Container, Nav} from "react-bootstrap"
 const Navigation = (props) => {
     return (
@@ -27,6 +27,9 @@ const Navigation = (props) => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
+<div>
+    <Outlet/>
+</div>
 
         </Fragment>
     )
