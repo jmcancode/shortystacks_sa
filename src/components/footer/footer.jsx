@@ -1,11 +1,9 @@
-import React, {Fragment, useState} from 'react'
+import React, {Fragment} from 'react'
 // custom styles
 import "./footer.css"
 import footerLogo from "../../assets/IMG_6296.webp";
 
 export default function Footer() {
-
-
 
     return (
         <Fragment>
