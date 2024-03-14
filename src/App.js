@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 // custom components
 import Navigation from "./components/navigation/nav";
-import Footer from "./components/footer/Footer";
+
 // routes pages
 import Main from "./pages/main";
 import FourOhFour from "./pages/fourohfour";
@@ -25,7 +25,6 @@ function App() {
           </Route>
         </Routes>
       </AnimatePresence>
-      {/* <Footer/> */}
     </Fragment>
   );
 }
